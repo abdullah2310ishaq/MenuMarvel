@@ -1,0 +1,29 @@
+﻿@page "/login"
+@attribute [Authorize(Roles = "Admin, User")];
+<h1>Login Page</h1>
+
+<p>Please select your role:</p>
+
+<button class="btn btn-primary" @onclick="LoginManager">Login as Manager</button>
+<button class="btn btn-primary" @onclick="LoginCustomer">Login as Customer</button>
+
+@code {
+    private void LoginManager()
+    {
+        // Add your manager login logic here
+        // For example, redirect to manager dashboard
+        // NavigationManager.NavigateTo("/manager-dashboard");
+        // Or display an alert
+        Console.WriteLine("Manager login");
+    }
+
+    private void LoginCustomer()
+    {
+        // Add your customer login logic here
+        // For example, redirect to customer dashboard
+        // NavigationManager.NavigateTo("/customer-dashboard");
+        // Or display an alert
+        Console.WriteLine("Customer login");
+    }
+}
+

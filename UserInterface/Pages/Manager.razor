@@ -1,0 +1,32 @@
+﻿@page "/manager"
+
+@using ModelLayer
+@using DataAccessLayer
+
+<h3>manager</h3>
+<button @onclick ="LoadRestaurantData">Show Data</button>
+
+@if (rest != null)
+{
+    <table width="100">
+        @foreach( var item in rest)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.food</td>
+                <td>@item.name</td>
+            </tr>
+        }
+
+    </table>
+}
+
+@code 
+{
+    List<ModelRestaurant> rest = new List<ModelRestaurant>();
+
+    private void LoadRestaurantData()
+    {
+        rest = dalRestaurant.GetRestaurantsinfo();
+    }
+} 
